@@ -1,0 +1,118 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fon.ai.np.mvnautoserviscommonlib.domen;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author Nikola
+ */
+public class Autodeo extends Proizvod {
+
+    private String proizvodjac;
+
+    public Autodeo() {
+        super();
+    }
+
+    public Autodeo(int proizvodID, String nazivAutodela, double vrednost, String proizvodjac) {
+        super(proizvodID, nazivAutodela, vrednost);
+        this.proizvodjac = proizvodjac;
+    }
+
+    public String getProizvodjac() {
+        return proizvodjac;
+    }
+
+    public void setProizvodjac(String proizvodjac) {
+        this.proizvodjac = proizvodjac;
+    }
+
+    @Override
+    public String vratiNazivTabele() {
+        return "autodeo";
+    }
+
+    @Override
+    public String vratiAtributeZaInsert() {
+        return "ProizvodID, proizvodjac";
+    }
+
+    @Override
+    public String vratiVrednostiZaInsert() {
+        return String.format("%d, '%s'", proizvodID, proizvodjac);
+
+    }
+
+    @Override
+    public String vratiJoinUpit() {
+        return "a JOIN proizvod p ON a.autodeoID = p.proizvodID";
+
+    }
+
+    @Override
+    public String vratiUslovZaNadjiSlog() {
+        return String.format("AutodeoID = %d", proizvodID);
+    }
+
+    @Override
+    public String vratiUslovZaListuObjekata() {
+        return "";
+    }
+
+    @Override
+    public String vratiID() {
+        return "AutodeoID";
+    }
+
+    @Override
+    public String vratiSetZaIzmenu() {
+        return String.format("AutodeoID = %d, proizvodjac = '%s'", proizvodID, proizvodjac);
+
+    }
+
+    @Override
+    public boolean jesteAutoInkrement() {
+        return false;
+    }
+
+    @Override
+    public void postaviIdObjekta(int id) {
+        setProizvodID(id);
+    }
+
+    @Override
+    public List<OpstiDomenskiObjekat> ucitajSve(ResultSet rs) throws SQLException {
+        List<OpstiDomenskiObjekat> lista = new ArrayList<>();
+        while (rs.next()) {
+            int proizvodID = rs.getInt("p.proizvodID");
+            String naziv = rs.getString("p.Naziv");
+            double vrednost = rs.getDouble("p.vrednost");
+            String proizvodjac = rs.getString("a.proizvodjac");
+            lista.add(new Autodeo(proizvodID, naziv, vrednost, proizvodjac));
+        }
+        return lista;
+    }
+
+    @Override
+    public OpstiDomenskiObjekat ucitajJedan(ResultSet rs) throws SQLException {
+        Autodeo autodeo = null;
+        if (rs.next()) {
+            int proizvodID = rs.getInt("p.proizvodID");
+            String naziv = rs.getString("p.Naziv");
+            double vrednost = rs.getDouble("p.vrednost");
+            String proizvodjac = rs.getString("a.proizvodjac");
+            autodeo = new Autodeo(proizvodID, naziv, vrednost, proizvodjac);
+        }
+
+        return autodeo;
+    }
+
+}
