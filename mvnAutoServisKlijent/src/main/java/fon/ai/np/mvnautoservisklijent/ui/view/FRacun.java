@@ -63,6 +63,7 @@ public class FRacun extends javax.swing.JDialog {
         scrollPaneTblStavke = new javax.swing.JScrollPane();
         tblStavke = new javax.swing.JTable();
         btnObrisiStavku = new javax.swing.JButton();
+        btnJSON = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -208,8 +209,10 @@ public class FRacun extends javax.swing.JDialog {
                 .addComponent(scrollPaneTblStavke, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnObrisiStavku)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        btnJSON.setText("JSON");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -226,6 +229,8 @@ public class FRacun extends javax.swing.JDialog {
                         .addComponent(btnSacuvaj, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnStornirajRacun)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnJSON, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnPonisti, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -288,7 +293,8 @@ public class FRacun extends javax.swing.JDialog {
                     .addComponent(btnSacuvaj)
                     .addComponent(btnOtkazi)
                     .addComponent(btnPonisti)
-                    .addComponent(btnStornirajRacun))
+                    .addComponent(btnStornirajRacun)
+                    .addComponent(btnJSON))
                 .addContainerGap())
         );
 
@@ -300,6 +306,7 @@ public class FRacun extends javax.swing.JDialog {
     }//GEN-LAST:event_txtDatumActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnJSON;
     private javax.swing.JButton btnObrisiStavku;
     private javax.swing.JButton btnOtkazi;
     private javax.swing.JButton btnPonisti;
@@ -407,5 +414,12 @@ public class FRacun extends javax.swing.JDialog {
     public JTable getTblStavke() {
         return tblStavke;
     }
+
+    public JButton getBtnJSON() {
+        return btnJSON;
+    }
+
+    
+    
 
 }

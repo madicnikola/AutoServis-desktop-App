@@ -22,6 +22,7 @@ import fon.ai.np.mvnautoservisklijent.validator.Validator;
 import fon.ai.np.mvnautoservisklijent.validator.implementations.DateValidator;
 import fon.ai.np.mvnautoservisklijent.validator.implementations.RacunValidator;
 import java.awt.HeadlessException;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -95,7 +96,7 @@ public class FRacunController {
             fr.getLblRacunID().setVisible(false);
             fr.getCheckStorniran().setVisible(false);
             fr.getLblStorniran().setVisible(false);
-
+            fr.getBtnJSON().setVisible(false);
             fr.getBtnStornirajRacun().setVisible(false);
         } else if (formMode.equals(FormMode.FORM_VIEW)) {
             fr.getTxtDatum().setEditable(false);
@@ -118,6 +119,7 @@ public class FRacunController {
         fr.getBtnPonisti().addActionListener(e -> resetFields());
         fr.getBtnStornirajRacun().addActionListener(e -> stornirajRacun());
         fr.getBtnObrisiStavku().addActionListener(e -> obrisiStavku());
+        fr.getBtnJSON().addActionListener(e -> serijalizujUJSON());
 
     }
 
@@ -214,6 +216,7 @@ public class FRacunController {
             }
         } else {
             JOptionPane.showMessageDialog(fr, "Sistem ne moze da stornira racun.", "Greska", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
         JOptionPane.showMessageDialog(fr, "Sistem je stornirao racun.", "Uspesno", JOptionPane.INFORMATION_MESSAGE);
@@ -343,6 +346,16 @@ public class FRacunController {
             fr.getCheckStorniran().setEnabled(false);
         }
 
+    }
+
+    private void serijalizujUJSON() {
+        try {
+            ControllerC.getInstance().serijalizujRacunUJSON(racun);
+            JOptionPane.showMessageDialog(fr, "Uspesno serijalizovan racun!", "Obavestenje", JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(fr, "Doslo je do greske prilikom serijalizacije!", "Greska", JOptionPane.ERROR_MESSAGE);
+
+        }
     }
 
 }

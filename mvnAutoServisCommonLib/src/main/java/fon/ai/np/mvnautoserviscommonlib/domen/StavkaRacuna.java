@@ -5,6 +5,7 @@
  */
 package fon.ai.np.mvnautoserviscommonlib.domen;
 
+import com.google.gson.annotations.Expose;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.List;
  */
 public class StavkaRacuna implements OpstiDomenskiObjekat {
 
-    private Racun racun;
+    private transient Racun racun;
     private int RBStavke;
     private double vrednostStavke;
     private int kolicina;

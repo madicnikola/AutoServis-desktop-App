@@ -5,6 +5,8 @@
  */
 package fon.ai.np.mvnautoservisklijent.ui.view.controller;
 
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
 import fon.ai.np.mvnautoserviscommonlib.domen.Racun;
 import fon.ai.np.mvnautoserviscommonlib.exception.SelectedItemException;
 import fon.ai.np.mvnautoservisklijent.controller.ControllerC;
@@ -12,7 +14,11 @@ import fon.ai.np.mvnautoservisklijent.ui.tablemodels.RacunTableModel;
 import fon.ai.np.mvnautoservisklijent.ui.view.FMain;
 import fon.ai.np.mvnautoservisklijent.ui.view.FPretragaRacuna;
 import fon.ai.np.mvnautoservisklijent.ui.view.mode.FormMode;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
@@ -59,7 +65,7 @@ public class FPretragaRacunaController {
             fr.setTitle("Storniranje racuna");
             fr.getBtnStorniraj().setVisible(true);
             fr.getBtnPrikaziDetalje().setVisible(true);
-
+            fr.getBtnImportJSON().setVisible(false);
         }
     }
 
@@ -114,6 +120,18 @@ public class FPretragaRacunaController {
         pretraziRacune();
     }
 
+    private void importFromJSON() {
+        try {
+            racun = ControllerC.getInstance().importFromJSON();
+            JOptionPane.showMessageDialog(fr, "Sistem je uspesno uvezao racun.", "Uspesno", JOptionPane.INFORMATION_MESSAGE);
+            ControllerC.getInstance().prikaziDetalje(racun);
+            pretraziRacune();
+        } catch (Exception ex) {
+            Logger.getLogger(FPretragaRacunaController.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(fr, "Racun vec postoji u sistemu.", "Greska", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
     private Racun getSelectedObject() throws Exception {
         int red = fr.getTblRacuni().getSelectedRow();
         if (red == -1) {
@@ -130,6 +148,7 @@ public class FPretragaRacunaController {
         fr.getTxtKriterijumPretrage().addActionListener(e -> pretraziRacune());
         fr.getBtnPrikaziDetalje().addActionListener(e -> prikaziDetalje());
         fr.getBtnStorniraj().addActionListener(e -> storniraj());
+        fr.getBtnImportJSON().addActionListener(e -> importFromJSON());
     }
 
 }

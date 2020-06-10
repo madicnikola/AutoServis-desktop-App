@@ -35,6 +35,8 @@
                       <Component id="btnSacuvaj" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnStornirajRacun" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnJSON" min="-2" pref="80" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnPonisti" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -114,6 +116,7 @@
                   <Component id="btnOtkazi" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnPonisti" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnStornirajRacun" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnJSON" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -341,7 +344,7 @@
                   <Component id="scrollPaneTblStavke" min="-2" pref="210" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnObrisiStavku" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="10" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -382,5 +385,10 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="btnJSON">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="JSON"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

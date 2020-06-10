@@ -1,0 +1,46 @@
+{
+  "racunID": 5,
+  "ukupnaVrednost": 71600.0,
+  "storniran": true,
+  "datum": "Feb 6, 2020",
+  "korisnik": {
+    "korisnikID": 1,
+    "JMBG": "1405112",
+    "ime": "Nikola",
+    "prezime": "Madic",
+    "korisnickoIme": "admin",
+    "lozinka": "202cb962ac59075b964b07152d234b70"
+  },
+  "klijent": {
+    "klijentID": 10,
+    "ime": "Milica",
+    "prezime": "Jovanovic",
+    "adresa": "Petra Petrovica 15nj",
+    "JMBG": "0805995786026",
+    "telefon": "0648697852",
+    "email": "test@test.com",
+    "racuni": []
+  },
+  "listaStavki": [
+    {
+      "RBStavke": 1,
+      "vrednostStavke": 1600.0,
+      "kolicina": 1,
+      "proizvod": {
+        "proizvodID": 12,
+        "naziv": "Zamena guma i balansiranje",
+        "vrednost": 1600.0
+      }
+    },
+    {
+      "RBStavke": 2,
+      "vrednostStavke": 35000.0,
+      "kolicina": 2,
+      "proizvod": {
+        "proizvodID": 9,
+        "naziv": "Veliki servis",
+        "vrednost": 35000.0
+      }
+    }
+  ]
+}

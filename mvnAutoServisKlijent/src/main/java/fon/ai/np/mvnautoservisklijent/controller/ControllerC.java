@@ -5,6 +5,9 @@
  */
 package fon.ai.np.mvnautoservisklijent.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
 import fon.ai.np.mvnautoservisklijent.communication.Communication;
 import fon.ai.np.mvnautoservisklijent.coordinator.GUICoordinator;
 import fon.ai.np.mvnautoserviscommonlib.domen.Klijent;
@@ -21,6 +24,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import fon.ai.np.mvnautoservisklijent.ui.view.mode.FormMode;
+import fon.ai.np.mvnautoservisklijent.util.BuildGson;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileSystemView;
 
 /**
  *
@@ -30,9 +43,11 @@ public class ControllerC {
 
     private static ControllerC instance;
     private final Map<String, Object> map;
+    private Gson gson;
 
     private ControllerC() {
         map = new HashMap<>();
+        gson = BuildGson.buildGson();
     }
 
     public static ControllerC getInstance() {
@@ -261,5 +276,31 @@ public class ControllerC {
     public void prikaziDetalje(Racun racun) {
         GUICoordinator.getInstance().openRacunFrame(FormMode.FORM_VIEW, racun);
 
+    }
+
+    public void serijalizujRacunUJSON(Racun racun) throws IOException {
+        FileWriter fileWriter
+                = new FileWriter(racun.getRacunID() + "_" + racun.getKlijent().getIme() + racun.getKlijent().getPrezime() + "_" + new SimpleDateFormat("dd-MM-yyyy").format(racun.getDatum()) + ".json");
+        fileWriter.write(gson.toJson(racun));
+        fileWriter.close();
+    }
+
+    public Racun importFromJSON() throws FileNotFoundException, JsonSyntaxException, JsonIOException, SQLIntegrityConstraintViolationException, Exception {
+        JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+        jfc.setDialogTitle("Choose a file to open: ");
+        jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+
+        int returnValue = jfc.showOpenDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            if (jfc.getSelectedFile().isFile()) {
+                System.out.println("You selected the file: " + jfc.getSelectedFile());
+
+            }
+        }
+        FileReader reader = new FileReader(jfc.getSelectedFile());
+        Racun racun = new Racun();
+        racun = gson.fromJson(reader, Racun.class);
+        sacuvajRacun(racun);
+        return racun;
     }
 }
