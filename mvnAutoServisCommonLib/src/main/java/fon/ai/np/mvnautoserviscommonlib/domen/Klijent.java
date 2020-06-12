@@ -12,24 +12,66 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * Klasa koja predstavlja klijenta koji koristi usluge autoservisa.
  *
  * @author Nikola
+ * @version 1.0
  */
 public class Klijent implements OpstiDomenskiObjekat {
-
+/**
+ * ID broj klijenta.
+ */
     private int klijentID;
+    /**
+     * ime klijenta.
+     */
     private String ime;
+    /**
+     * prezime klijenta.
+     */
     private String prezime;
+    /**
+     * adresa stanovanja.
+     */
     private String adresa;
+    /**
+     * jedinstveni maticni broj sadrzi 13 cifara.
+     */
     private String JMBG;
+   
+    /**
+     * mobilni telefon.
+     */
     private String telefon;
+    /**
+     * elektronska posta.
+     */
     private String email;
+    /**
+     * lista racuna izdatih klijentu.
+     */
     private List<Racun> racuni;
 
+    /**
+     * Neparametrizovan konstruktor koji inicializuje listu racuna.
+     *
+     * @see Racun
+     */
     public Klijent() {
         racuni = new LinkedList<>();
     }
 
+    /**
+     * Konstruktor koji inicializuje sve atribute klijenta.
+     *
+     * @param klijentID id klijenta
+     * @param ime ime klijenta
+     * @param prezime prezime klijenta
+     * @param adresa adresa stanovanja
+     * @param JMBG jedinstveni maticni broj sadrzi 13 cifara
+     * @param telefon mobilni telefon
+     * @param email elektronska posta
+     */
     public Klijent(int klijentID, String ime, String prezime, String adresa, String JMBG, String telefon, String email) {
         this();
         this.klijentID = klijentID;

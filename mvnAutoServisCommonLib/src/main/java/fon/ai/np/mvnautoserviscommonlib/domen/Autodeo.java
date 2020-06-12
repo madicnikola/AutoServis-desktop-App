@@ -11,17 +11,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Klasa koja predstavlja autodeo.
  *
  * @author Nikola
+ * @version 1.0
+ * @see Proizvod
  */
 public class Autodeo extends Proizvod {
 
+    /**
+     * Ime proizvodjaca.
+     */
     private String proizvodjac;
 
+    /**
+     * Neparametrizovani konstruktor koji poziva konstruktor nadklase.
+     *
+     * @see Proizvod
+     */
     public Autodeo() {
         super();
     }
 
+    /**
+     * Konstruktor koji inicializuje sve atribute autodela.
+     *
+     * @param proizvodID id proizvoda.
+     * @param nazivAutodela naziv autodela.
+     * @param vrednost vrednost proizvoda.
+     * @param proizvodjac naziv proizvodjaca.
+     */
     public Autodeo(int proizvodID, String nazivAutodela, double vrednost, String proizvodjac) {
         super(proizvodID, nazivAutodela, vrednost);
         this.proizvodjac = proizvodjac;

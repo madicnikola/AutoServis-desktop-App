@@ -13,23 +13,61 @@ import java.util.List;
 import java.util.Objects;
 
 /**
+ * Klasa koja predstavlja korisnika sistema.
  *
  * @author Nikola
+ * @version 1.0
  */
 public class Korisnik implements OpstiDomenskiObjekat {
 
+    /**
+     * ID broj korisnika.
+     */
     private int korisnikID;
+    /**
+     * Jedinstveni maticni broj korisnika.
+     */
     private String JMBG;
+    /**
+     * Korisnikovo ime.
+     */
     private String ime;
+    /**
+     * Korisnikovo prezime.
+     */
     private String prezime;
+    /**
+     * ime koje korisnik koristi za pristup sistemu.
+     */
     private String korisnickoIme;
+    /**
+     * sifra potrebna za autentifikaciju.
+     */
     private String lozinka;
+    /**
+     * Lista racuna fakturisanih od strane korisnika.
+     */
     private List<Racun> racuni;
 
+    /**
+     * Neparametrizovan konstruktor koji inicializuje listu racuna.
+     *
+     * @see Racun
+     */
     public Korisnik() {
         racuni = new LinkedList<>();
     }
 
+    /**
+     * Konstruktor koji inicializuje sve atribute korisnika osim liste racuna.
+     *
+     * @param korisnikID ID broj korisnika.
+     * @param JMBG Jedinstveni maticni broj korisnika.
+     * @param ime Korisnikovo ime.
+     * @param prezime Korisnikovo prezime.
+     * @param korisnickoIme ime koje korisnik koristi za pristup sistemu.
+     * @param lozinka sifra potrebna za autentifikaciju.
+     */
     public Korisnik(int korisnikID, String JMBG, String ime, String prezime, String korisnickoIme, String lozinka) {
         this.korisnikID = korisnikID;
         this.JMBG = JMBG;
@@ -39,6 +77,17 @@ public class Korisnik implements OpstiDomenskiObjekat {
         this.lozinka = lozinka;
     }
 
+    /**
+     * Konstruktor koji inicializuje sve atribute korisnika.
+     *
+     * @param korisnikID ID broj korisnika.
+     * @param JMBG Jedinstveni maticni broj korisnika.
+     * @param ime Korisnikovo ime.
+     * @param prezime Korisnikovo prezime.
+     * @param korisnickoIme ime koje korisnik koristi za pristup sistemu.
+     * @param lozinka sifra potrebna za autentifikaciju.
+     * @param racuni lista racuna fakturisanih od strane korisnika.
+     */
     public Korisnik(int korisnikID, String JMBG, String ime, String prezime, String korisnickoIme, String lozinka, List<Racun> racuni) {
         this.korisnikID = korisnikID;
         this.JMBG = JMBG;

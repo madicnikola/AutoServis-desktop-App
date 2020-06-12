@@ -5,7 +5,6 @@
  */
 package fon.ai.np.mvnautoserviscommonlib.domen;
 
-import com.google.gson.annotations.Expose;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -13,29 +12,75 @@ import java.util.Date;
 import java.util.List;
 
 /**
+ * Klasa koja predstavlja proizvode i usluge zavedene na fakturi sa uracunatom
+ * cenom i kolicinom
  *
  * @author Nikola
+ * @version 1.2
  */
 public class StavkaRacuna implements OpstiDomenskiObjekat {
 
+    /**
+     * Predstavlja racun za koji je stavka vezana.
+     *
+     * @see Racun
+     */
     private transient Racun racun;
+    /**
+     * Redni broj stavke.
+     */
     private int RBStavke;
+    /**
+     * Vrednost stavke u RSD najcesce.
+     */
     private double vrednostStavke;
+    /**
+     * Kolicina robe navede u stavci.
+     */
     private int kolicina;
+    /**
+     * Proizvod/usluga koja je navedena u stavci.
+     *
+     * @see Proizvod
+     */
     private Proizvod proizvod;
 
+    /**
+     * Neparametrizovan konstruktor.
+     */
     public StavkaRacuna() {
     }
 
+    /**
+     * Konstruktor koji inicializuje racun za koji je stavka vezana.
+     *
+     * @param racun racun za koji se stavka vezuje.
+     */
     public StavkaRacuna(Racun racun) {
         this.racun = racun;
     }
 
+    /**
+     * Konstruktor koji inicializuje racun za koji je stavka vezana i redni broj
+     * stavke.
+     *
+     * @param racun racun za koji se stavka vezuje.
+     * @param RBStavke redni broj stavke.
+     */
     public StavkaRacuna(Racun racun, int RBStavke) {
         this.racun = racun;
         this.RBStavke = RBStavke;
     }
 
+    /**
+     * Konstruktor koji inicializuje sve atribute stavke.
+     *
+     * @param racun racun za koji se stavka vezuje.
+     * @param RBStavke redni broj stavke.
+     * @param vrednostStavke vrednost proizvoda sa stavke.
+     * @param kolicina kolicina proizvoda sa stavke.
+     * @param proizvod proizvod ili usluga koja je navedena na stavci racuna.
+     */
     public StavkaRacuna(Racun racun, int RBStavke, double vrednostStavke, int kolicina, Proizvod proizvod) {
         this.racun = racun;
         this.RBStavke = RBStavke;

@@ -12,17 +12,46 @@ import java.util.Date;
 import java.util.List;
 
 /**
+ * Klasa koja predstavlja fakturu koju klijent dobija za izvrsene usluge.
  *
  * @author Nikola
+ * @version 1.1
  */
 public class Racun implements OpstiDomenskiObjekat {
 
+    /**
+     * Jedinstveni identifikator racuna.
+     */
     private int racunID;
+    /**
+     * zbir vrednosti svih stavki racuna.
+     */
     private double ukupnaVrednost;
+    /**
+     * true ili false vrednost koja odredjuje da li je racun storniran ili nije.
+     */
     private boolean storniran;
+    /**
+     * Datum izdavanja racuna.
+     */
     private Date datum;
+    /**
+     * Korisnik sistema koji izdaje racun.
+     *
+     * @see Korisnik
+     */
     private Korisnik korisnik;
+    /**
+     * Klijent kome se racun izdaje.
+     *
+     * @see Klijent
+     */
     private Klijent klijent;
+    /**
+     * lista stavki racuna.
+     *
+     * @see StavkaRacuna
+     */
     private List<StavkaRacuna> listaStavki;
 
     public Racun() {
