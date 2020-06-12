@@ -11,8 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Klasa koja predstavlja uslugu koja se pruza klijentu autoservisa
  * @author Nikola
+ * @version 1.1
+ * @see Proizvod
  */
 public class Usluga extends Proizvod {
 

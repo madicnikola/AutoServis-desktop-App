@@ -13,8 +13,10 @@ import java.util.List;
 import java.util.Objects;
 
 /**
+ * Klasa koja predstavlja korisnika sistema.
  *
  * @author Nikola
+ * @version 1.0
  */
 public class Korisnik implements OpstiDomenskiObjekat {
 
@@ -26,10 +28,25 @@ public class Korisnik implements OpstiDomenskiObjekat {
     private String lozinka;
     private List<Racun> racuni;
 
+    /**
+     * Neparametrizovan konstruktor koji inicializuje listu racuna.
+     *
+     * @see Racun
+     */
     public Korisnik() {
         racuni = new LinkedList<>();
     }
 
+    /**
+     * Konstruktor koji inicializuje sve atribute korisnika osim liste racuna.
+     *
+     * @param korisnikID
+     * @param JMBG
+     * @param ime
+     * @param prezime
+     * @param korisnickoIme
+     * @param lozinka
+     */
     public Korisnik(int korisnikID, String JMBG, String ime, String prezime, String korisnickoIme, String lozinka) {
         this.korisnikID = korisnikID;
         this.JMBG = JMBG;
@@ -39,6 +56,17 @@ public class Korisnik implements OpstiDomenskiObjekat {
         this.lozinka = lozinka;
     }
 
+    /**
+     * Konstruktor koji inicializuje sve atribute korisnika.
+     *
+     * @param korisnikID
+     * @param JMBG
+     * @param ime
+     * @param prezime
+     * @param korisnickoIme
+     * @param lozinka
+     * @param racuni
+     */
     public Korisnik(int korisnikID, String JMBG, String ime, String prezime, String korisnickoIme, String lozinka, List<Racun> racuni) {
         this.korisnikID = korisnikID;
         this.JMBG = JMBG;
