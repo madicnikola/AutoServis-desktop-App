@@ -11,13 +11,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Klasa koja predstavlja proizvod u sirem smislu koji moze biti proizvod ili
+ * usluga.
  *
  * @author Nikola
+ * @version 1.0
  */
 public class Proizvod implements OpstiDomenskiObjekat {
 
+    /**
+     * jedinstveni id proizvoda.
+     */
     protected int proizvodID;
+    /**
+     * Naziv proizvoda.
+     */
     protected String naziv;
+    /**
+     * vrednost proizvoda u RSD valuti.
+     */
     protected double vrednost;
 
     public Proizvod() {

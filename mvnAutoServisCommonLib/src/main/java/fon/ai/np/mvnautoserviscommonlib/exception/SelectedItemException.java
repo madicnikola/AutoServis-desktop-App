@@ -6,8 +6,9 @@
 package fon.ai.np.mvnautoserviscommonlib.exception;
 
 /**
- *
+ * Izuzetak koji se baca usled neselektovanja potrebnih podataka.   
  * @author Nikola
+ * @version 1.0
  */
 public class SelectedItemException extends Exception {
 
