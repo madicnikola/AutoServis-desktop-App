@@ -10,12 +10,9 @@ Without this configuration present, some functionality in the IDE may be limited
         <word>izuzetak</word>
         <word>kolicina</word>
 <<<<<<< HEAD
-<<<<<<< HEAD
         <word>korisnik</word>
 =======
 >>>>>>> 600b1022f00ebde451d3ffcc8334319d2f076ffc
-=======
->>>>>>> e8c5c9b9e4f6f36f64ce24085962cb7913db4d3a
         <word>redni</word>
         <word>sistem</word>
     </spellchecker-wordlist>
