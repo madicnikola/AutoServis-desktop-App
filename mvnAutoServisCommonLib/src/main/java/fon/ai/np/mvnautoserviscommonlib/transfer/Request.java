@@ -9,16 +9,18 @@ import fon.ai.np.mvnautoserviscommonlib.transfer.constants.Operacija;
 import java.io.Serializable;
 
 /**
- * Klasa koja objedinjuje objekte koji se salju kroz mrezu.
- * Zahtev - od klijenta ka serveru.
+ * Klasa koja objedinjuje objekte koji se salju kroz mrezu. Zahtev - od klijenta
+ * ka serveru.
+ *
  * @author Nikola
  * @version 1.1
  */
 public class Request implements Serializable {
+
     /**
-     * kod zahteva.
-     * Svaki kod operacije predstavlja tip zahteva koji se salje.
+     * kod zahteva. Svaki kod operacije predstavlja tip zahteva koji se salje.
      * tip zahteva se moze videti u:
+     *
      * @see Operacija
      */
     private int operacija;

@@ -19,13 +19,38 @@ import java.util.List;
  */
 public class Klijent implements OpstiDomenskiObjekat {
 
+    /**
+     * ID broj klijenta.
+     */
     private int klijentID;
+    /**
+     * ime klijenta.
+     */
     private String ime;
+    /**
+     * prezime klijenta.
+     */
     private String prezime;
+    /**
+     * adresa stanovanja.
+     */
     private String adresa;
+    /**
+     * jedinstveni maticni broj sadrzi 13 cifara.
+     */
     private String JMBG;
+
+    /**
+     * mobilni telefon.
+     */
     private String telefon;
+    /**
+     * elektronska posta.
+     */
     private String email;
+    /**
+     * lista racuna izdatih klijentu.
+     */
     private List<Racun> racuni;
 
     /**
@@ -40,13 +65,13 @@ public class Klijent implements OpstiDomenskiObjekat {
     /**
      * Konstruktor koji inicializuje sve atribute klijenta.
      *
-     * @param klijentID
-     * @param ime
-     * @param prezime
-     * @param adresa
-     * @param JMBG
-     * @param telefon
-     * @param email
+     * @param klijentID id klijenta
+     * @param ime ime klijenta
+     * @param prezime prezime klijenta
+     * @param adresa adresa stanovanja
+     * @param JMBG jedinstveni maticni broj sadrzi 13 cifara
+     * @param telefon mobilni telefon
+     * @param email elektronska posta
      */
     public Klijent(int klijentID, String ime, String prezime, String adresa, String JMBG, String telefon, String email) {
         this();

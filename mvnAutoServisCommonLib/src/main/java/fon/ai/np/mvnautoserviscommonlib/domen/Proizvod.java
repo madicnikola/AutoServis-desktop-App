@@ -32,9 +32,19 @@ public class Proizvod implements OpstiDomenskiObjekat {
      */
     protected double vrednost;
 
+    /**
+     * Neparametrizovani konstruktor.
+     */
     public Proizvod() {
     }
 
+    /**
+     * Konstruktor koji inicializuje sve atribute klase proizvod.
+     *
+     * @param proizvodID ID broj proizvoda.
+     * @param naziv naziv proizvoda.
+     * @param vrednost vrednost proizvoda.
+     */
     public Proizvod(int proizvodID, String naziv, double vrednost) {
         this();
         this.proizvodID = proizvodID;

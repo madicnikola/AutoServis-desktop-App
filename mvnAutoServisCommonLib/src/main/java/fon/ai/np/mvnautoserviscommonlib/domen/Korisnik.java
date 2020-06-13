@@ -20,12 +20,33 @@ import java.util.Objects;
  */
 public class Korisnik implements OpstiDomenskiObjekat {
 
+    /**
+     * ID broj korisnika.
+     */
     private int korisnikID;
+    /**
+     * Jedinstveni maticni broj korisnika.
+     */
     private String JMBG;
+    /**
+     * Korisnikovo ime.
+     */
     private String ime;
+    /**
+     * Korisnikovo prezime.
+     */
     private String prezime;
+    /**
+     * ime koje korisnik koristi za pristup sistemu.
+     */
     private String korisnickoIme;
+    /**
+     * sifra potrebna za autentifikaciju.
+     */
     private String lozinka;
+    /**
+     * Lista racuna fakturisanih od strane korisnika.
+     */
     private List<Racun> racuni;
 
     /**
@@ -40,12 +61,21 @@ public class Korisnik implements OpstiDomenskiObjekat {
     /**
      * Konstruktor koji inicializuje sve atribute korisnika osim liste racuna.
      *
+<<<<<<< HEAD
      * @param korisnikID
      * @param JMBG
      * @param ime
      * @param prezime
      * @param korisnickoIme
      * @param lozinka
+=======
+     * @param korisnikID ID broj korisnika.
+     * @param JMBG Jedinstveni maticni broj korisnika.
+     * @param ime Korisnikovo ime.
+     * @param prezime Korisnikovo prezime.
+     * @param korisnickoIme ime koje korisnik koristi za pristup sistemu.
+     * @param lozinka sifra potrebna za autentifikaciju.
+>>>>>>> 600b1022f00ebde451d3ffcc8334319d2f076ffc
      */
     public Korisnik(int korisnikID, String JMBG, String ime, String prezime, String korisnickoIme, String lozinka) {
         this.korisnikID = korisnikID;
@@ -59,6 +89,7 @@ public class Korisnik implements OpstiDomenskiObjekat {
     /**
      * Konstruktor koji inicializuje sve atribute korisnika.
      *
+<<<<<<< HEAD
      * @param korisnikID
      * @param JMBG
      * @param ime
@@ -66,6 +97,15 @@ public class Korisnik implements OpstiDomenskiObjekat {
      * @param korisnickoIme
      * @param lozinka
      * @param racuni
+=======
+     * @param korisnikID ID broj korisnika.
+     * @param JMBG Jedinstveni maticni broj korisnika.
+     * @param ime Korisnikovo ime.
+     * @param prezime Korisnikovo prezime.
+     * @param korisnickoIme ime koje korisnik koristi za pristup sistemu.
+     * @param lozinka sifra potrebna za autentifikaciju.
+     * @param racuni lista racuna fakturisanih od strane korisnika.
+>>>>>>> 600b1022f00ebde451d3ffcc8334319d2f076ffc
      */
     public Korisnik(int korisnikID, String JMBG, String ime, String prezime, String korisnickoIme, String lozinka, List<Racun> racuni) {
         this.korisnikID = korisnikID;

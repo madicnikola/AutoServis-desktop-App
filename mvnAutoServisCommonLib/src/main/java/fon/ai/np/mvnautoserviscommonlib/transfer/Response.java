@@ -5,20 +5,23 @@
  */
 package fon.ai.np.mvnautoserviscommonlib.transfer;
 
+import fon.ai.np.mvnautoserviscommonlib.transfer.constants.Operacija;
 import fon.ai.np.mvnautoserviscommonlib.transfer.constants.Status;
 import java.io.Serializable;
 
 /**
- * Klasa koja objedinjuje objekte koji se salju kroz mrezu.
- * Serverski odgovor - od servera ka klijentu.
+ * Klasa koja objedinjuje objekte koji se salju kroz mrezu. Serverski odgovor -
+ * od servera ka klijentu.
+ *
  * @author Nikola
  * @version 1.2
  */
 public class Response implements Serializable {
-  /**
-     * kod zahteva.
-     * Svaki kod operacije predstavlja tip zahteva na koji se odgovara.
-     * tip zahteva se moze videti u:
+
+    /**
+     * kod zahteva. Svaki kod operacije predstavlja tip zahteva na koji se
+     * odgovara. tip zahteva se moze videti u:
+     *
      * @see Operacija
      */
     private int operacija;
@@ -27,9 +30,10 @@ public class Response implements Serializable {
      */
     private String poruka;
     /**
-    * kod statusa.
-    * @see Status
-    */
+     * kod statusa.
+     *
+     * @see Status
+     */
     private int status;
     /**
      * objekat koji se salje klijentu kao odgovor na zahtev.

@@ -9,7 +9,10 @@ Without this configuration present, some functionality in the IDE may be limited
     <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
         <word>izuzetak</word>
         <word>kolicina</word>
+<<<<<<< HEAD
         <word>korisnik</word>
+=======
+>>>>>>> 600b1022f00ebde451d3ffcc8334319d2f076ffc
         <word>redni</word>
         <word>sistem</word>
     </spellchecker-wordlist>

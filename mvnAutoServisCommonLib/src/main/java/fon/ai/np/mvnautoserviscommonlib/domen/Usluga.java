@@ -12,17 +12,32 @@ import java.util.List;
 
 /**
  * Klasa koja predstavlja uslugu koja se pruza klijentu autoservisa
+ *
  * @author Nikola
  * @version 1.1
  * @see Proizvod
  */
 public class Usluga extends Proizvod {
 
+    /**
+     * Tekstualni opis procesa pruzanja usluge.
+     */
     private String opisUsluge;
 
+    /**
+     * Neparametrizovani konstruktor.
+     */
     public Usluga() {
     }
 
+    /**
+     * Konstruktor koji inicializuje sve atribute klase Usluga.
+     *
+     * @param proizvodID ID usluge.
+     * @param naziv naziv usluge.
+     * @param vrednost vrednost usluge.
+     * @param opisUsluge Tekstualni opis procesa pruzanja usluge.
+     */
     public Usluga(int proizvodID, String naziv, double vrednost, String opisUsluge) {
         super(proizvodID, naziv, vrednost);
         this.opisUsluge = opisUsluge;
