@@ -12,7 +12,10 @@ import java.util.List;
 
 /**
  * Klasa koja predstavlja uslugu koja se pruza klijentu autoservisa
+<<<<<<< HEAD
  *
+=======
+>>>>>>> e8c5c9b9e4f6f36f64ce24085962cb7913db4d3a
  * @author Nikola
  * @version 1.1
  * @see Proizvod

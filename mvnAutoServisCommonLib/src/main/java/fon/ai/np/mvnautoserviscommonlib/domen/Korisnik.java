@@ -62,12 +62,16 @@ public class Korisnik implements OpstiDomenskiObjekat {
      * Konstruktor koji inicializuje sve atribute korisnika osim liste racuna.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e8c5c9b9e4f6f36f64ce24085962cb7913db4d3a
      * @param korisnikID
      * @param JMBG
      * @param ime
      * @param prezime
      * @param korisnickoIme
      * @param lozinka
+<<<<<<< HEAD
 =======
      * @param korisnikID ID broj korisnika.
      * @param JMBG Jedinstveni maticni broj korisnika.
@@ -76,6 +80,8 @@ public class Korisnik implements OpstiDomenskiObjekat {
      * @param korisnickoIme ime koje korisnik koristi za pristup sistemu.
      * @param lozinka sifra potrebna za autentifikaciju.
 >>>>>>> 600b1022f00ebde451d3ffcc8334319d2f076ffc
+=======
+>>>>>>> e8c5c9b9e4f6f36f64ce24085962cb7913db4d3a
      */
     public Korisnik(int korisnikID, String JMBG, String ime, String prezime, String korisnickoIme, String lozinka) {
         this.korisnikID = korisnikID;
@@ -90,6 +96,9 @@ public class Korisnik implements OpstiDomenskiObjekat {
      * Konstruktor koji inicializuje sve atribute korisnika.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e8c5c9b9e4f6f36f64ce24085962cb7913db4d3a
      * @param korisnikID
      * @param JMBG
      * @param ime
@@ -97,6 +106,7 @@ public class Korisnik implements OpstiDomenskiObjekat {
      * @param korisnickoIme
      * @param lozinka
      * @param racuni
+<<<<<<< HEAD
 =======
      * @param korisnikID ID broj korisnika.
      * @param JMBG Jedinstveni maticni broj korisnika.
@@ -106,6 +116,8 @@ public class Korisnik implements OpstiDomenskiObjekat {
      * @param lozinka sifra potrebna za autentifikaciju.
      * @param racuni lista racuna fakturisanih od strane korisnika.
 >>>>>>> 600b1022f00ebde451d3ffcc8334319d2f076ffc
+=======
+>>>>>>> e8c5c9b9e4f6f36f64ce24085962cb7913db4d3a
      */
     public Korisnik(int korisnikID, String JMBG, String ime, String prezime, String korisnickoIme, String lozinka, List<Racun> racuni) {
         this.korisnikID = korisnikID;

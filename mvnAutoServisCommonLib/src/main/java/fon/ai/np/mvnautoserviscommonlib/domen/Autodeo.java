@@ -25,7 +25,11 @@ public class Autodeo extends Proizvod {
     private String proizvodjac;
 
     /**
+<<<<<<< HEAD
      * Neparametrizovani konstruktor koji poziva konstruktor nadklase.
+=======
+     * Prazan konstruktor koji poziva konstruktor nadklase.
+>>>>>>> e8c5c9b9e4f6f36f64ce24085962cb7913db4d3a
      *
      * @see Proizvod
      */

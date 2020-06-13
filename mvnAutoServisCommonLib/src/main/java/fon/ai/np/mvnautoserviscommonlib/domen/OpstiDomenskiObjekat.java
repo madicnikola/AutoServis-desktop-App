@@ -11,7 +11,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
+<<<<<<< HEAD
  * Interfejs koji sadrzi sve potrebne metode za manipulaciju sa opstim domenskim objektima prilikom rada sa bazom.
+=======
+ * Interfejs koji sadrzi sve potrebne metode za manipulaciju sa opstim domenskim objektima.
+>>>>>>> e8c5c9b9e4f6f36f64ce24085962cb7913db4d3a
  * @author Nikola
  * @version 1.1
  */
