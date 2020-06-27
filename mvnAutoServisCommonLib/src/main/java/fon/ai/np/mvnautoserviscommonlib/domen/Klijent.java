@@ -65,7 +65,6 @@ public class Klijent implements OpstiDomenskiObjekat {
     /**
      * Konstruktor koji inicializuje sve atribute klijenta.
      *
-<<<<<<< HEAD
      * @param klijentID id klijenta
      * @param ime ime klijenta
      * @param prezime prezime klijenta
@@ -73,15 +72,6 @@ public class Klijent implements OpstiDomenskiObjekat {
      * @param JMBG jedinstveni maticni broj sadrzi 13 cifara
      * @param telefon mobilni telefon
      * @param email elektronska posta
-=======
-     * @param klijentID
-     * @param ime
-     * @param prezime
-     * @param adresa
-     * @param JMBG
-     * @param telefon
-     * @param email
->>>>>>> e8c5c9b9e4f6f36f64ce24085962cb7913db4d3a
      */
     public Klijent(int klijentID, String ime, String prezime, String adresa, String JMBG, String telefon, String email) {
         this();
