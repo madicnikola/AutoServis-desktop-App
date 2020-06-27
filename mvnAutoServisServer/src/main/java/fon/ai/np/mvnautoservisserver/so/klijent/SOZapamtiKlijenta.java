@@ -19,8 +19,8 @@ public class SOZapamtiKlijenta extends OpstaSO {
 
     public SOZapamtiKlijenta(Klijent klijent) {
         super();
-        odo = klijent;
         validator = new ClientValidator();
+        odo = klijent;
     }
 
     @Override

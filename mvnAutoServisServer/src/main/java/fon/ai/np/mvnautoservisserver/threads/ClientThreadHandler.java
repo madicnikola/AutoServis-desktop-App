@@ -184,6 +184,7 @@ public class ClientThreadHandler extends Thread {
             response.setResponseObject(klijent);
             response.setOperacija(Operacija.SAVE_CLIENT);
             response.setPoruka("Klijent: " + klijent.getIme() + " je uspesno sacuvan.");
+            System.out.println(klijent.getKlijentID());
         } catch (ValidationException | SQLException ex) {
             response.setStatus(Status.ERROR);
             response.setPoruka(ex.getMessage());

@@ -63,4 +63,8 @@ public abstract class OpstaSO {
 
     protected abstract void izvrsiOperaciju() throws SQLException;
 
+    public DBBroker getDb() {
+        return db;
+    }
+
 }

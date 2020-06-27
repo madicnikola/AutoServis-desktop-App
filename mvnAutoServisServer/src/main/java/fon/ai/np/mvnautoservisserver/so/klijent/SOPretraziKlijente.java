@@ -30,7 +30,7 @@ public class SOPretraziKlijente extends OpstaSO {
 
     @Override
     protected void proveriPreduslov() throws ValidationException {
-        
+
     }
 
     @Override
