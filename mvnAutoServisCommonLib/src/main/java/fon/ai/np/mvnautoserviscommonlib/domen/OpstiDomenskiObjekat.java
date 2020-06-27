@@ -11,7 +11,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Interfejs koji sadrzi sve potrebne metode za manipulaciju sa opstim domenskim objektima prilikom rada sa bazom.
+ * Interfejs koji sadrzi sve potrebne metode za manipulaciju sa opstim domenskim
+ * objektima prilikom rada sa bazom.
+ *
  * @author Nikola
  * @version 1.1
  */
