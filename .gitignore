@@ -2,7 +2,6 @@
 /mvnAutoServisServer/target/
 /mvnAutoServisCommonLib/target/
 
-/mvnAutoServisCommonLib/nb-configuration.xml
 
 /mvnAutoServisCommonLib/.classpath
 /mvnAutoServisServer/.classpath
@@ -19,3 +18,8 @@
 /mvnAutoServisServer/nbactions.xml
 /mvnAutoServisKlijent/nbactions.xml
 
+/mvnAutoServisServer/nbproject/
+/mvnAutoServisServer/nb-configuration.xml
+/mvnAutoServisKlijent/nb-configuration.xml
+/mvnAutoServisCommonLib/nb-configuration.xml
+/mvnAutoServisKlijent/2_MilenaPavlovic_05-02-2020.json

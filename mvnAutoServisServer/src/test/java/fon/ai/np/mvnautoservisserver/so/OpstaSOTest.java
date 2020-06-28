@@ -38,7 +38,6 @@ public abstract class OpstaSOTest {
     /**
      * Test template of IzvrsiOperaciju method, of interface OpstaSO.
      */
-    @Test
     public void testIzvrsiOperaciju() throws Exception {
         izvrsiOperaciju();
         so.getDb().otvoriKonekciju();

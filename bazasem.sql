@@ -50,7 +50,7 @@ CREATE TABLE `klijent` (
   `telefon` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`klijentID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=495 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `klijent` */
 
@@ -58,8 +58,7 @@ insert  into `klijent`(`klijentID`,`ime`,`prezime`,`adresa`,`JMBG`,`telefon`,`em
 (6,'Nikola','Popovic','Stepe Stepanovica 15b','1598665853695','061612616','asfva@avd'),
 (9,'Milena','Pavlovic','Petrovacka 45p','7854866958755','0636985487','milena@gmail.com'),
 (10,'Milica','Jovanovic','Petra Petrovica 15nj','0805995786026','0648697852','test@test.com'),
-(11,'Goran','Jankovic','Pariske Komune 2','7896558585225','0636985698','david@test.com'),
-(12,'Nemanja','Madic','Kralja Milana 14','0215485986358','0639898569','nemanja@m.com');
+(11,'Goran','Jankovic','Pariske Komune 2','7896558585225','0636985698','david@test.com');
 
 /*Table structure for table `korisnik` */
 
@@ -73,13 +72,14 @@ CREATE TABLE `korisnik` (
   `korisnickoime` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `lozinka` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`korisnikID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `korisnik` */
 
 insert  into `korisnik`(`korisnikID`,`jmbg`,`ime`,`prezime`,`korisnickoime`,`lozinka`) values 
 (1,'1405112','Nikola','Madic','admin','202cb962ac59075b964b07152d234b70'),
-(2,'12345`','Luka','Scekic','luka','202cb962ac59075b964b07152d234b70');
+(2,'12345`','Luka','Scekic','luka','202cb962ac59075b964b07152d234b70'),
+(3,'11503','test','test','test','098f6bcd4621d373cade4e832627b4f6');
 
 /*Table structure for table `proizvod` */
 
@@ -90,7 +90,7 @@ CREATE TABLE `proizvod` (
   `naziv` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `vrednost` double NOT NULL,
   PRIMARY KEY (`ProizvodID`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `proizvod` */
 
@@ -119,18 +119,17 @@ CREATE TABLE `racun` (
   `klijentID` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`racunID`),
   KEY `korisnikID` (`korisnikID`),
-  KEY `klijentID` (`klijentID`),
+  KEY `racun_ibfk_2` (`klijentID`),
   CONSTRAINT `racun_ibfk_1` FOREIGN KEY (`korisnikID`) REFERENCES `korisnik` (`korisnikID`),
-  CONSTRAINT `racun_ibfk_2` FOREIGN KEY (`klijentID`) REFERENCES `klijent` (`klijentID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  CONSTRAINT `racun_ibfk_2` FOREIGN KEY (`klijentID`) REFERENCES `klijent` (`klijentID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `racun` */
 
 insert  into `racun`(`racunID`,`ukupnaVrednost`,`storniran`,`datum`,`korisnikID`,`klijentID`) values 
-(2,105000,1,'2020-02-05',1,9),
-(3,105000,1,'2020-02-05',1,11),
+(3,105000,0,'2020-02-05',1,11),
 (4,7600,1,'2020-02-06',1,11),
-(5,71600,1,'2020-02-06',1,10),
+(5,71600,0,'2020-02-06',1,10),
 (6,35000,1,'2020-02-08',1,6),
 (8,36000,1,'2020-02-12',1,9);
 
@@ -154,7 +153,6 @@ CREATE TABLE `stavkaracuna` (
 /*Data for the table `stavkaracuna` */
 
 insert  into `stavkaracuna`(`racunID`,`RBStavke`,`vrednostStavke`,`kolicina`,`proizvodID`) values 
-(2,1,35000,3,9),
 (3,1,35000,3,9),
 (5,2,35000,2,9),
 (6,1,35000,1,9),
@@ -180,7 +178,7 @@ insert  into `usluga`(`uslugaID`,`opisUsluge`) values
 (9,'kompletan servis'),
 (11,'zamena ulja i filtera'),
 (12,'Zamena guma za cetiri tocka'),
-(19,'Ugradnja novih disk kocnica i zamena paknova');
+(19,'Ugradnja novih disk kocnica i zamena paknova.');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
