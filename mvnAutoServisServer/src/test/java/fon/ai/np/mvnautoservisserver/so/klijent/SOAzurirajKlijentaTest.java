@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Ignore;
 
 /**
  *
@@ -28,7 +27,6 @@ public class SOAzurirajKlijentaTest extends OpstaSOTest {
     @Before
     @Override
     public void setUp() {
-        super.setUp();
         odo = new Klijent(0, "test", "test", "test adress", "test104521", "060test", "test@test");
         SOZapamtiKlijenta soZapamti = new SOZapamtiKlijenta((Klijent) odo);
         try {
@@ -38,7 +36,7 @@ public class SOAzurirajKlijentaTest extends OpstaSOTest {
             ex.printStackTrace();
         }
         expResultKlijent = (Klijent) odo;
-        so = new SOAzurirajKlijenta(expResultKlijent);
+        super.setUp();
     }
 
     @Override
@@ -49,7 +47,7 @@ public class SOAzurirajKlijentaTest extends OpstaSOTest {
         } catch (ValidationException | SQLException ex) {
             ex.printStackTrace();
         }
-        super.tearDown(); 
+        super.tearDown();
     }
 
     /**
@@ -60,10 +58,11 @@ public class SOAzurirajKlijentaTest extends OpstaSOTest {
     public void testIzvrsiOperaciju() throws Exception {
         expResultKlijent.setIme("testUpdateIme");
         expResultKlijent.setEmail("test@test2");
+        
+        so = new SOAzurirajKlijenta(expResultKlijent);
         super.testIzvrsiOperaciju();
+        
         Klijent result = (Klijent) so.getDb().vratiJedan(odo);
-        System.out.println(odo.vratiUslovZaNadjiSlog());
-        System.out.println(result);
         assertEquals(result.getIme(), expResultKlijent.getIme());
         assertEquals(result.getEmail(), expResultKlijent.getEmail());
 
@@ -75,7 +74,10 @@ public class SOAzurirajKlijentaTest extends OpstaSOTest {
     @Test(expected = Exception.class)
     public void testIzvrsiOperacijuEmail() throws Exception {
         expResultKlijent.setEmail("test");
+        
         so = new SOAzurirajKlijenta(expResultKlijent);
         super.testIzvrsiOperaciju();
+
     }
+
 }

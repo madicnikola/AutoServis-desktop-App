@@ -11,6 +11,7 @@ import fon.ai.np.mvnautoservisserver.so.OpstaSOTest;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -34,7 +35,6 @@ public class SOPretraziKlijenteTest extends OpstaSOTest {
     @Before
     @Override
     public void setUp() {
-        super.setUp();
         for (Klijent klijent : listaKlijenata) {
             SOZapamtiKlijenta soZapamti = new SOZapamtiKlijenta(klijent);
             try {
@@ -46,9 +46,9 @@ public class SOPretraziKlijenteTest extends OpstaSOTest {
         }
         String kriterijum = " WHERE ime LIKE 'test%'";
         so = new SOPretraziKlijente(kriterijum);
-
+        super.setUp();
     }
-
+    @After
     @Override
     public void tearDown() {
         for (Klijent klijent : listaKlijenata) {
@@ -63,28 +63,12 @@ public class SOPretraziKlijenteTest extends OpstaSOTest {
         super.tearDown();
     }
 
-    /**
-     * Test of izvrsiOperaciju method, of class SOPretraziKlijente.
-     */
-    @Test
     @Override
     public void testIzvrsiOperaciju() throws Exception {
         super.testIzvrsiOperaciju();
         List<Klijent> expResult = getListaKlijenata();
         List<Klijent> result = ((SOPretraziKlijente) so).getListaKlijenata();
         assertEquals(expResult, result);
-    }
-
-    /**
-     * Test2 of izvrsiOperaciju method, of class SOPretraziKlijente.
-     */
-    @Test
-    public void test2IzvrsiOperacijuPrazanString() throws Exception {
-        so = new SOPretraziKlijente("");
-        super.testIzvrsiOperaciju();
-        List<Klijent> expResult = getListaKlijenata();
-        List<Klijent> result = ((SOPretraziKlijente) so).getListaKlijenata();
-        assertNotEquals(expResult, result);
     }
 
     /**
