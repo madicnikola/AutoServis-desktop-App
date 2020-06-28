@@ -5,16 +5,15 @@
  */
 package fon.ai.np.mvnautoservisserver.so.korisnik;
 
+import fon.ai.np.mvnautoserviscommonlib.domen.Korisnik;
 import fon.ai.np.mvnautoservisserver.so.OpstaSOTest;
-import org.junit.Test;
+import fon.ai.np.mvnautoservisserver.util.PasswordHash;
 import static org.junit.Assert.*;
-import org.junit.Ignore;
 
 /**
  *
  * @author Nikola
  */
-@Ignore
 public class SOLoginTest extends OpstaSOTest {
 
     public SOLoginTest() {
@@ -22,7 +21,12 @@ public class SOLoginTest extends OpstaSOTest {
 
     @Override
     public void setUp() {
+        odo = new Korisnik();
+        ((Korisnik) odo).setKorisnickoIme("test");
+        ((Korisnik) odo).setLozinka(PasswordHash.getInstance().hash("test"));
+        so = new SOLogin(((Korisnik) odo));
         super.setUp();
+
     }
 
     @Override
@@ -30,16 +34,10 @@ public class SOLoginTest extends OpstaSOTest {
         super.tearDown();
     }
 
-    /**
-     * Test of izvrsiOperaciju method, of class SOLogin.
-     */
-    @Test
+    @Override
     public void testIzvrsiOperaciju() throws Exception {
-        System.out.println("izvrsiOperaciju");
-        SOLogin instance = null;
-        instance.izvrsiOperaciju();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        super.testIzvrsiOperaciju();
+        assertEquals((Korisnik) odo, (Korisnik) so.getOpstiDomenskiObjekat());
     }
 
 }

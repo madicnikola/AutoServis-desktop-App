@@ -27,7 +27,6 @@ import java.sql.SQLException;
 import java.time.LocalTime;
 import java.util.List;
 
-
 /**
  *
  * @author Nikola
@@ -298,13 +297,12 @@ public class ClientThreadHandler extends Thread {
 
     private void deleteService(Request request, Response response) {
         try {
-            Usluga usluga = (Usluga) request.getRequestObject();
-            ControllerS.getInstance().deleteProizvod(new Proizvod(usluga));
-            usluga = ControllerS.getInstance().deleteUslugu(usluga);
+            Proizvod p = (Proizvod) request.getRequestObject();
+            p = ControllerS.getInstance().deleteProizvod(new Proizvod((Usluga) p));
             response.setStatus(Status.OK);
-            response.setResponseObject(usluga);
+            response.setResponseObject(p);
             response.setOperacija(Operacija.DELETE_SERVICE);
-            response.setPoruka("Usluga: " + usluga.getNaziv() + " je uspesno izmenjena.");
+            response.setPoruka("Usluga: " + p.getNaziv() + " je uspesno izmenjena.");
         } catch (ValidationException | SQLException ex) {
             response.setStatus(Status.ERROR);
             response.setPoruka(ex.getMessage());

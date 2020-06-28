@@ -5,8 +5,6 @@
  */
 package fon.ai.np.mvnautoservisklijent.ui.view.controller;
 
-import com.google.gson.JsonIOException;
-import com.google.gson.JsonSyntaxException;
 import fon.ai.np.mvnautoserviscommonlib.domen.Racun;
 import fon.ai.np.mvnautoserviscommonlib.exception.SelectedItemException;
 import fon.ai.np.mvnautoservisklijent.controller.ControllerC;
@@ -14,8 +12,7 @@ import fon.ai.np.mvnautoservisklijent.ui.tablemodels.RacunTableModel;
 import fon.ai.np.mvnautoservisklijent.ui.view.FMain;
 import fon.ai.np.mvnautoservisklijent.ui.view.FPretragaRacuna;
 import fon.ai.np.mvnautoservisklijent.ui.view.mode.FormMode;
-import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
+import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -126,6 +123,8 @@ public class FPretragaRacunaController {
             JOptionPane.showMessageDialog(fr, "Sistem je uspesno uvezao racun.", "Uspesno", JOptionPane.INFORMATION_MESSAGE);
             ControllerC.getInstance().prikaziDetalje(racun);
             pretraziRacune();
+        } catch (FileNotFoundException fnfe) {
+
         } catch (Exception ex) {
             Logger.getLogger(FPretragaRacunaController.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(fr, "Racun vec postoji u sistemu.", "Greska", JOptionPane.ERROR_MESSAGE);

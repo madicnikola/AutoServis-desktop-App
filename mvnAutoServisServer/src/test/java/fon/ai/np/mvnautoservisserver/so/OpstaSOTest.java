@@ -6,8 +6,11 @@
 package fon.ai.np.mvnautoservisserver.so;
 
 import fon.ai.np.mvnautoserviscommonlib.domen.OpstiDomenskiObjekat;
+import fon.ai.np.mvnautoserviscommonlib.exception.ValidationException;
+import java.sql.SQLException;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 
 /**
  *
@@ -35,11 +38,16 @@ public abstract class OpstaSOTest {
     /**
      * Test template of IzvrsiOperaciju method, of interface OpstaSO.
      */
+    @Test
     public void testIzvrsiOperaciju() throws Exception {
-        System.out.println("izvrsiOperaciju");
+        izvrsiOperaciju();
+        so.getDb().otvoriKonekciju();
+    }
+
+    protected void izvrsiOperaciju() throws SQLException, ValidationException {
+        System.out.println("izvrsiOperaciju - " + this.getClass().getName());
         so.izvrsenjeSO();
         odo = so.getOpstiDomenskiObjekat();
-        so.getDb().otvoriKonekciju();
     }
 
 }

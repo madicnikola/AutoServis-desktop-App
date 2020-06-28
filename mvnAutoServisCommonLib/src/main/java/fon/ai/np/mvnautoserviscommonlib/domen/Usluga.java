@@ -88,7 +88,7 @@ public class Usluga extends Proizvod {
 
     @Override
     public String vratiSetZaIzmenu() {
-        return String.format("UslugaID = %d, opisUsluge = '%s'", proizvodID, opisUsluge);
+        return String.format("opisUsluge = '%s'", opisUsluge);
     }
 
     @Override

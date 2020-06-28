@@ -218,7 +218,7 @@ public class Klijent implements OpstiDomenskiObjekat {
 
     @Override
     public void postaviIdObjekta(int id) {
-        setKlijentID(klijentID);
+        setKlijentID(id);
     }
 
     @Override

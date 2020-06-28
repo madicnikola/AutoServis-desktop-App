@@ -217,8 +217,8 @@ public class ControllerC {
         if (response.getStatus() == Status.ERROR) {
             throw new Exception(response.getPoruka());
         }
-        usluga = (Usluga) response.getResponseObject();
-
+        Proizvod p = (Proizvod) response.getResponseObject();
+        usluga = new Usluga(p.getProizvodID(), p.getNaziv(), p.getVrednost(), "");
         setUsluga(usluga);
         return usluga;
     }
@@ -289,18 +289,18 @@ public class ControllerC {
         JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         jfc.setDialogTitle("Choose a file to open: ");
         jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-
         int returnValue = jfc.showOpenDialog(null);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             if (jfc.getSelectedFile().isFile()) {
+                Racun racun = new Racun();
                 System.out.println("You selected the file: " + jfc.getSelectedFile());
+                FileReader reader = new FileReader(jfc.getSelectedFile());
+                racun = gson.fromJson(reader, Racun.class);
+                sacuvajRacun(racun);
 
+                return racun;
             }
         }
-        FileReader reader = new FileReader(jfc.getSelectedFile());
-        Racun racun = new Racun();
-        racun = gson.fromJson(reader, Racun.class);
-        sacuvajRacun(racun);
-        return racun;
+        throw new FileNotFoundException();
     }
 }

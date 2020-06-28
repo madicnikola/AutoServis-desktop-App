@@ -27,7 +27,6 @@ import fon.ai.np.mvnautoservisserver.so.racun.SOPretraziRacune;
 import fon.ai.np.mvnautoservisserver.so.racun.SOStornirajRacun;
 import fon.ai.np.mvnautoservisserver.so.racun.SOZapamtiRacun;
 import fon.ai.np.mvnautoservisserver.so.usluga.SOAzurirajUslugu;
-import fon.ai.np.mvnautoservisserver.so.usluga.SOObrisiUslugu;
 import fon.ai.np.mvnautoservisserver.so.usluga.SOPretraziUsluge;
 import fon.ai.np.mvnautoservisserver.so.usluga.SOZapamtiUslugu;
 import fon.ai.np.mvnautoservisserver.threads.ClientThreadHandler;
@@ -154,12 +153,6 @@ public class ControllerS {
 
     public Usluga updateUslugu(Usluga usluga) throws SQLException, ValidationException {
         SOAzurirajUslugu so = new SOAzurirajUslugu(usluga);
-        so.izvrsenjeSO();
-        return (Usluga) so.getOpstiDomenskiObjekat();
-    }
-
-    public Usluga deleteUslugu(Usluga usluga) throws SQLException, ValidationException {
-        SOObrisiUslugu so = new SOObrisiUslugu(usluga);
         so.izvrsenjeSO();
         return (Usluga) so.getOpstiDomenskiObjekat();
     }

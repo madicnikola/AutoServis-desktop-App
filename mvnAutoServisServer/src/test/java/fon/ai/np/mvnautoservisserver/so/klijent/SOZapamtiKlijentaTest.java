@@ -26,9 +26,9 @@ public class SOZapamtiKlijentaTest extends OpstaSOTest {
 
     @Override
     public void setUp() {
-        super.setUp();
         odo = new Klijent(0, "test", "test", "test adress", "test104521", "060test", "test@test");
         so = new SOZapamtiKlijenta((Klijent) odo);
+        super.setUp();
     }
 
     @Override
@@ -42,10 +42,6 @@ public class SOZapamtiKlijentaTest extends OpstaSOTest {
         super.tearDown();
     }
 
-    /**
-     * Test of izvrsiOperaciju method, of class SOZapamtiKlijenta.
-     */
-    @Test(expected = Test.None.class)
     @Override
     public void testIzvrsiOperaciju() throws Exception {
         super.testIzvrsiOperaciju();
@@ -64,4 +60,5 @@ public class SOZapamtiKlijentaTest extends OpstaSOTest {
         ((Klijent) odo).setEmail("test");
         super.testIzvrsiOperaciju();
     }
+
 }

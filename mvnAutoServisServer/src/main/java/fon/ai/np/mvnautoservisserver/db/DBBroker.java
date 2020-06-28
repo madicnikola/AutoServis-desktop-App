@@ -5,6 +5,7 @@
  */
 package fon.ai.np.mvnautoservisserver.db;
 
+import fon.ai.np.mvnautoserviscommonlib.domen.Korisnik;
 import fon.ai.np.mvnautoserviscommonlib.domen.OpstiDomenskiObjekat;
 import fon.ai.np.mvnautoservisserver.db.constants.Constants;
 import fon.ai.np.mvnautoservisserver.util.SettingsLoader;
@@ -140,6 +141,10 @@ public class DBBroker {
         } catch (SQLException ex) {
             throw new SQLException("Greska prilikom izmene objekta " + odo.vratiNazivTabele(), ex);
         }
+    }
+
+    public Korisnik vratiJedan() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
