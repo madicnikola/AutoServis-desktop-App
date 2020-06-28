@@ -9,8 +9,6 @@ import fon.ai.np.mvnautoserviscommonlib.domen.Klijent;
 import fon.ai.np.mvnautoserviscommonlib.exception.ValidationException;
 import fon.ai.np.mvnautoservisserver.so.OpstaSOTest;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -43,6 +41,7 @@ public class SOZapamtiKlijentaTest extends OpstaSOTest {
     }
 
     @Override
+    @Test
     public void testIzvrsiOperaciju() throws Exception {
         super.testIzvrsiOperaciju();
         assertEquals((Klijent) so.getDb().vratiJedan((Klijent) odo), (Klijent) odo);

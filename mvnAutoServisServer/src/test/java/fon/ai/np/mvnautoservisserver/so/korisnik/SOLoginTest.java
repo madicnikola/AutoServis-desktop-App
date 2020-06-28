@@ -9,6 +9,7 @@ import fon.ai.np.mvnautoserviscommonlib.domen.Korisnik;
 import fon.ai.np.mvnautoservisserver.so.OpstaSOTest;
 import fon.ai.np.mvnautoservisserver.util.PasswordHash;
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  *
@@ -35,6 +36,7 @@ public class SOLoginTest extends OpstaSOTest {
     }
 
     @Override
+    @Test
     public void testIzvrsiOperaciju() throws Exception {
         super.testIzvrsiOperaciju();
         assertEquals((Korisnik) odo, (Korisnik) so.getOpstiDomenskiObjekat());

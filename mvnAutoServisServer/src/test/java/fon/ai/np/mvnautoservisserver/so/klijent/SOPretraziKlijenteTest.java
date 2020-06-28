@@ -64,6 +64,7 @@ public class SOPretraziKlijenteTest extends OpstaSOTest {
     }
 
     @Override
+    @Test
     public void testIzvrsiOperaciju() throws Exception {
         super.testIzvrsiOperaciju();
         List<Klijent> expResult = getListaKlijenata();

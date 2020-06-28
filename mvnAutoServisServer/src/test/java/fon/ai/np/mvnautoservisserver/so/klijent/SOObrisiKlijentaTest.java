@@ -11,6 +11,7 @@ import fon.ai.np.mvnautoservisserver.so.OpstaSOTest;
 import java.sql.SQLException;
 import org.junit.Before;
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  *
@@ -37,6 +38,7 @@ public class SOObrisiKlijentaTest extends OpstaSOTest {
     }
 
     @Override
+    @Test
     public void testIzvrsiOperaciju() throws Exception {
         super.testIzvrsiOperaciju();
         assertNotEquals(so.getDb().vratiJedan(odo), (Klijent) odo);

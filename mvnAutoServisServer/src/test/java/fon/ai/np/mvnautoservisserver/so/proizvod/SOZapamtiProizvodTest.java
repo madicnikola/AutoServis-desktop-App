@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
+import org.junit.Test;
 
 /**
  *
@@ -46,6 +47,7 @@ public class SOZapamtiProizvodTest extends OpstaSOTest {
      * Test of izvrsiOperaciju method, of class SOZapamtiProizvod.
      */
     @Override
+    @Test
     public void testIzvrsiOperaciju() throws Exception {
         super.testIzvrsiOperaciju();
         assertEquals((Proizvod) so.getDb().vratiJedan((Proizvod) odo), (Proizvod) odo);
